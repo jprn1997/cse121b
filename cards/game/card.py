@@ -6,9 +6,9 @@ class Card():
 
     """Creates card object and declares attributes."""
     def __init__(self):
-        self.value = 0
+        self.newvalue = 0
+        self.oldvalue = 0
         self.points = 0
-        self.guess = 0
 
     """method to to collect input for which """
     def guess(self):
@@ -17,5 +17,7 @@ class Card():
     """method to pull a card with a random number between 1 and 13.
     It then will assign points based on the guess that was made with the guess method."""
     def pull_card(self):
-        self.value = random.randint(1, 13)
-        self.points = 100 if self.guess == "Hi" and self.guess > self.value else 100 if self.guess == "Low" and self.guess < self.value else -75
+        self.newvalue = random.randint(1, 13)
+        self.points = 100 if self.guess == "Hi" and self.newvalue > self.oldvalue else 100 if self.guess == "Low" and self.newvalue < self.oldvalue else -75
+
+
